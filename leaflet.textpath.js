@@ -12,6 +12,11 @@ var __onAdd = L.Polyline.prototype.onAdd,
 
 
 var PolylineTextPath = {
+    _fireMouseEvent: function (e) {
+      this.fire(e.type, {
+        originalEvent: e
+      });
+    },
 
     onAdd: function (map) {
         __onAdd.call(this, map);
